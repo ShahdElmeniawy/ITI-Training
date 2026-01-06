@@ -1,0 +1,224 @@
+<html>
+
+<head>
+    <title>Event Registration</title>
+</head>
+<style>
+    header {
+        width: 223vh;
+        background-color: rgb(31, 30, 30);
+        height: 15%;
+        margin: -10px;
+        padding: 0px;
+        justify-items: flex-start;
+        display: flex;
+    }
+
+    footer {
+        width: 223vh;
+        background-color: rgb(31, 30, 30);
+        height: 15%;
+        margin: -10px;
+        display: inline-flex;
+        justify-content: baseline;
+    }
+
+    main {
+        height: 200%;
+        padding-top: 10px;
+    }
+
+    .logo {
+        height: 150px;
+        margin-top: -20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        margin-top: 30px;
+    }
+
+    nav {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-around;
+    }
+
+    span {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 23px;
+    }
+
+    footer span p {
+        padding-top: 2px;
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .mail {
+        text-decoration: none;
+        color: white;
+    }
+
+    span a img {
+        width: 50px;
+    }
+</style>
+
+<body>
+    <header>
+        <img src="./resources/ChatGPT Image Jan 5, 2026, 12_50_38 PM.png" class="logo">
+        <nav>
+            <a href="./index.HTML">Home </a>
+            <a href="./schedule.HTML">Schedule</a>
+            <a href="./speaker.HTML"> Speaker</a>
+            <a href="./registration.HTML"> Registration</a>
+        </nav>
+    </header>
+    <main>
+        <form method="get" action="./success.HTML">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="Name"> Name </label>
+                <br>
+                <input type="text" required maxlength="100" id="Name">
+                <br>
+                <label for="mail"> Mail</label>
+                <br>
+                <input type="text" required id="mail" placeholder="abc@gamil.com">
+                <br>
+                <label for="telephone"> Phone </label>
+                <br>
+                <input type="tel" required id="telephone">
+                <br>
+                <label for="date"> Date of Birth</label>
+                <br>
+                <input type="date" required id="date">
+                <br>
+                <label for="portfalio"> Professional Website </label>
+                <br>
+                <input type="url" id="portfalio">
+                <br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ticket Type</legend>
+                <p>Please select your Ticket Type:</p>
+                <input type="radio" id="Early" name="TicketType" value="Early">
+                <label for="Early">Early Bird Pass ($299)</label><br>
+                <input type="radio" id="Standerd" name="TicketType" value="Standerd">
+                <label for="Standerd">Standard Pass ($399)</label><br>
+                <input type="radio" id="VIP" name="TicketType" value="VIP">
+                <label for="VIP">VIP Pass ($599)</label><br>
+                <input type="radio" id="Student" name="TicketType" value="Student">
+                <label for="Student">Student Pass ($149)</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Workshop</legend>
+                <p>Select your Workshops</p>
+                <input type="checkbox" id="Advanced" name="Advanced" value="Advanced">
+                <label for="Advanced">Advanced React Patterns</label><br>
+                <input type="checkbox" id="Backend" name="Backend" value="Backend">
+                <label for="Backend">Backend Architecture</label><br>
+                <input type="checkbox" id="Design" name="Design" value="Design">
+                <label for="Design">UI/UX Design </label><br>
+                <input type="checkbox" id="Cloud" name="Cloud" value="Cloud">
+                <label for="Cloud">Cloud Deployment</label><br>
+                <input type="checkbox" id="Machine" name="Machine" value="Machine">
+                <label for="Machine">AI and Machine Learning </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Meal Preference</legend>
+                <label for="Meal-select">Choose a Meal:</label>
+                <select id="Mael-select" name="Meal-select">
+                    <option value="selectMealPreference" selected>-- Select Meal Preference --</option>
+                    <optgroup label="Standard">
+                        <option value="Regular">Regular</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                    </optgroup>
+                    <optgroup label="Allergy">
+                        <option value="Gluten-Free">Gluten-Free</option>
+                        <option value="Nut-Free"> Nut-Free </option>
+                    </optgroup>
+                </select>
+
+                <br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Accessibility Needs</legend>
+                <p>Select what do you need IF you have Accessibility Needs</p>
+                <input type="checkbox" id="Wheelchair" name="Wheelchair" value="Wheelchair">
+                <label for="Wheelchair">Wheelchair accessibility </label><br>
+                <input type="checkbox" id="Sign" name="Sign" value="Sign">
+                <label for="Sign">Sign language interpreter</label><br>
+                <input type="checkbox" id="Hearing" name="Hearing" value="Hearing">
+                <label for="Hearing">Hearing assistance </label><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Speaker Proposal</legend>
+                <input type="checkbox" id="speakerProposal">
+                <label>
+                    I want to submit a speaker proposal
+                </label>
+                <br>
+                <lable for="talk">Talk Title</lable>
+                <input type="text" id="talk">
+                <br>
+                <lable for="talkDiscription">Talk Discription</lable><br>
+                <textarea rows="5" cols="50" maxlength="500" id="talkDiscription"></textarea>
+                <br>
+                <lable for="PresentationFile">Upload Presentation</lable>
+                <input type="file" accept=".pdf,.pptx" id="PresentationFile">
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label for="contactName">Emergency Contact Name:</label>
+                <input type="text" id="contactName"> <br>
+                <label for="contactPhone">Emergency Contact Phone:</label>
+                <input type="text" id="contactPhone"> <br>
+                <label for="spacialRequests">Special Requests: </label> <br>
+                <textarea rows="3" cols="50" id="spacialRequests"></textarea>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Terms and Agreement</legend>
+                <input type="checkbox" id="conditions" name="conditions" value="conditions" required>
+                <label for="conditions">I agree to terms and conditions </label><br>
+                <a href="./terms.HTML" target="_blank">Terms and conditions</a>
+                <br>
+                <input type="checkbox" id="Subscribe" name="Subscribe" value="Subscribe">
+                <label for="Subscribe">Subscribe to newsletter</label><br>
+            </fieldset>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <input type="button" value="Save Draft">
+
+        </form>
+    </main>
+    <footer>
+        <span>
+            <p>Copyright © All Rights Reserved</p>
+            <p><a href="tomail:techConf2026" class="mail">tachcinf2026@gamil.com</a></p>
+        </span>
+        <span>
+            <a href="https://www.linkedin.com/in/shahdelmeniawy/"><img src="./resources/linkedin.png"></a>
+            <a href="https://www.facebook.com/shahd.elmeniawy/"><img src="./resources/facebook.png"></a>
+        </span>
+    </footer>
+
+</body>
+
+</html>

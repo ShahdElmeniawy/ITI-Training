@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    direction: none;
+    color: inherit;
+    font: inherit;
+    border: none;
+    background-color: none;
+}
+
+header,
+footer {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    direction: none;
+    color: inherit;
+    font: inherit;
+    border: none;
+    background-color: none;
+}

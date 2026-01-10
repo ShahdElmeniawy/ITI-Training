@@ -1,0 +1,566 @@
+:root {
+    --primaryColor: #212e3b;
+    --secondaryColor: #b84134;
+    --accentColor: #357dad;
+    --lightBackground: #ECF0F1;
+    --darkBackground: #34495E;
+    --White: #FFFFFF;
+    --hoverColor: rgb(201, 199, 199);
+    --gradientBackground: #4c6986;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--lightBackground);
+}
+
+header {
+    color: var(--White);
+    background: linear-gradient(to right, var(--darkBackground), var(--gradientBackground));
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+    height: 60px;
+    width: 100%;
+    display: inline-flex;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+}
+
+nav {
+    display: inline-block;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+nav>a {
+    letter-spacing: 3px;
+}
+
+nav a:hover {
+    color: var(--hoverColor);
+    -webkit-text-stroke: 1px white;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    color: var(--White);
+    background: linear-gradient(to right, var(--darkBackground), var(--gradientBackground));
+    position: sticky;
+    height: 60px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+footer span {
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+.mainPage {
+    width: 100%;
+    box-shadow: var(--White);
+    margin-top: 20px;
+}
+
+.pageTitle,
+h1+time {
+    display: grid;
+    place-content: center;
+    font-weight: bold;
+    color: var(--primaryColor);
+    font-size: 25px;
+
+}
+
+.mainPage h1+time {
+    margin-bottom: 30px;
+}
+
+article[class="mainArticle"] {
+    border: var(--lightBackground);
+    border: 2px gray solid;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: white;
+    width: 40%;
+    line-height: 30px;
+    margin-left: 30px;
+
+}
+
+.mainList li {
+    margin-bottom: 30px;
+    margin-left: 30px;
+    background-color: var(--gradientBackground);
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+    width: 530px;
+}
+
+.tickets {
+    float: right;
+    margin-right: 50px;
+}
+
+.tickets li {
+    margin-bottom: 30px;
+    margin-left: 30px;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+    width: 530px;
+    font-weight: bold;
+}
+
+aside+a button {
+    background-color: #94352a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    outline-offset: 90px;
+}
+
+aside+a button span {
+    background-color: var(--secondaryColor);
+    transform: translateY(-10px);
+    width: 200px;
+    height: 50px;
+    padding-top: 10px;
+    border-radius: 20px;
+    display: block;
+}
+
+
+aside+a button span:hover {
+    transform: translateY(-8px);
+}
+
+#mainReister {
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 100px;
+
+}
+
+
+.tickets li:nth-child(odd) {
+    background-color: var(--primaryColor);
+
+}
+
+.tickets li:nth-child(even) {
+    background-color: var(--White);
+    color: var(--primaryColor);
+    border: var(--primaryColor) solid 2px;
+}
+
+.mainImg {
+    float: right;
+    margin-right: 100px;
+}
+
+.mainImg img {
+    width: 400px;
+    margin-top: -80px;
+}
+
+.mainImg figcaption {
+    color: var(--darkBackground);
+    font-weight: bold;
+}
+
+.sectionMain div {
+    margin-bottom: 150px;
+}
+
+.cardSchedule {
+    border: var(--primaryColor) 5px solid;
+    border-radius: 40px;
+    display: inline-block;
+    background-color: var(--White);
+    height: 300px;
+    width: 400px;
+    padding: 20px;
+    margin: 30px;
+    line-height: 28px;
+}
+
+.cardSchedule>h3 {
+    font-weight: bold;
+    color: var(--White);
+    font-size: 20px;
+    font-family: 'Varela Round';
+    background-color: var(--accentColor);
+    padding: 7px;
+    border-radius: 10px;
+    width: max-content;
+    margin: auto;
+}
+
+.cardSchedule>h3+p {
+    font-weight: bold;
+    color: var(--primaryColor);
+    margin-top: 10px;
+}
+
+.speaker {
+    color: var(--secondaryColor);
+    font-weight: bolder;
+}
+
+
+.cardSchedule time {
+    border-radius: 7px;
+    border: var(--primaryColor) 2px solid;
+    color: var(--primaryColor);
+    padding: 3px;
+    font-weight: bold;
+}
+
+.cardSchedule li {
+    border-radius: 7px;
+    border: var(--secondaryColor) 3px solid;
+    color: var(--primaryColor);
+    font-weight: bold;
+    margin: 10px;
+    padding: 3px;
+    width: 330px;
+}
+
+.downLoadSchedule {
+    align-content: center;
+    position: relative;
+    display: block;
+    margin: 3% 41% 3% 41%;
+    padding: 8px;
+    border-radius: 15px;
+    color: var(--White);
+    font-weight: bold;
+    font-size: large;
+    border: var(--primaryColor) 3px solid;
+    background: linear-gradient(to right, var(--darkBackground), var(--gradientBackground));
+}
+
+#submit,
+#reset,
+#saveDraft {
+    align-content: center;
+    padding: 8px;
+    border-radius: 15px;
+    color: var(--White);
+    font-weight: bold;
+    font-size: large;
+    border: var(--primaryColor) 3px solid;
+    width: 260px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, var(--darkBackground), var(--gradientBackground));
+}
+
+#submit {
+    background: linear-gradient(to right, darkgreen, lightgreen);
+}
+
+#reset {
+    background: linear-gradient(to right, darkred, red);
+}
+
+
+#submit:hover,
+#reset:hover,
+#saveDraft:hover {
+    color: var(--hoverColor);
+    -webkit-text-stroke: 1px white;
+}
+
+#formButtons {
+    width: fit-content;
+    margin: auto;
+}
+
+.cardSection {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+fieldset {
+    border: var(--primaryColor) 4px solid;
+    border-radius: 20px;
+    padding: 10px 30px;
+    width: 60%;
+    margin: auto;
+    line-height: 25px;
+    background-color: var(--White);
+}
+
+fieldset input,
+fieldset textarea {
+    border: var(--primaryColor) 3px solid;
+    border-radius: 20px;
+    padding-left: 10px;
+    background-color: var(--lightBackground);
+    margin-bottom: 10px;
+}
+
+fieldset legend {
+    color: var(--primaryColor);
+    font-weight: bolder;
+    font-size: larger;
+}
+
+fieldset p {
+    color: var(--primaryColor);
+    font-size: large;
+    font-weight: bold;
+}
+
+fieldset input[type="radio"]+label,
+fieldset input[type="checkbox"]+label {
+    color: var(--darkBackground);
+    font-size: medium;
+    font-style: italic;
+}
+
+fieldset label {
+    color: var(--primaryColor);
+    font-size: medium;
+    font-weight: 600;
+}
+
+
+fieldset input:focus,
+fieldset textarea:focus {
+    border: green 5px solid;
+    outline: none;
+}
+
+fieldset a {
+    text-decoration: underline;
+    margin-left: 20px;
+    color: var(--darkBackground);
+    font-family: serif;
+}
+
+.profile {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 6px var(--primaryColor) double;
+    margin: 50px auto 50px auto;
+    background-color: var(--lightBackground);
+}
+
+.information {
+    float: right;
+    /* margin: 90px 100px 50px 0px; */
+    width: 65%;
+}
+
+.speakerName {
+    font-size: large;
+    font-weight: bold;
+    color: var(--primaryColor);
+    border: var(--primaryColor) 6px double;
+    border-radius: 40px;
+    padding: 7px;
+    width: 200px;
+    text-align: center;
+    background-color: var(--lightBackground);
+}
+
+.speakerName::first-letter {
+    color: var(--secondaryColor);
+}
+
+.speakerCard {
+    border: var(--primaryColor) 6px double;
+    border-radius: 50px;
+    width: 70%;
+    padding: 40px 40px 60px 40px;
+    margin: 30px auto 30px auto;
+    background-color: var(--White);
+    height: 70%;
+
+}
+
+.discription {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 550;
+    color: var(--primaryColor);
+    padding-left: 20px;
+}
+
+.aboutSpeaker {
+    margin: 10px 20px 10px 10px;
+    line-height: 25px;
+    border-radius: 50px;
+    background-color: var(--lightBackground);
+    padding: 20px;
+    color: var(--darkBackground);
+    font-style: italic;
+    font-weight: bold;
+}
+
+.goToRegister {
+    align-content: center;
+    padding: 12px;
+    border-radius: 15px;
+    color: var(--White);
+    font-weight: bold;
+    font-size: large;
+    border: var(--primaryColor) 3px solid;
+    width: 420px;
+    margin: 20px auto 30px auto;
+    background: linear-gradient(to right, var(--darkBackground), var(--gradientBackground));
+}
+
+.goToRegister a {
+    border-radius: 15px;
+    border: 1px solid;
+    padding: 8px;
+    background: linear-gradient(to right, darkred, red);
+}
+
+.termsAndCondetions h3,
+.termsAndCondetions data strong {
+    text-decoration: underline;
+    color: var(--accentColor);
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+    margin: 30px 30px 10px;
+    display: inline-block;
+}
+
+.termsAndCondetions li {
+    list-style-type: disc;
+    margin: 5px 30px 10px 60px;
+    color: var(--primaryColor);
+    font-weight: 600;
+}
+
+.termsAndCondetions time {
+    margin: 5px 30px 10px -20px;
+    color: var(--primaryColor);
+    font-weight: 600;
+}
+
+.termsAndCondetions+a {
+    display: block;
+    padding: 10px;
+    border-radius: 15px;
+    color: var(--White);
+    font-weight: bold;
+    font-size: large;
+    border: var(--primaryColor) 3px solid;
+    width: fit-content;
+    margin: 30px auto;
+    background: linear-gradient(to right, var(--darkBackground), var(--gradientBackground));
+}
+
+.termsAndCondetions+a:hover {
+    color: var(--hoverColor);
+    -webkit-text-stroke: 1px white;
+}
+
+.success img {
+    float: right;
+    border-radius: 50px;
+    height: 90%;
+    width: 35%;
+    margin-top: 30px
+}
+
+.success {
+    display: block;
+}
+
+.success h1 {
+    color: var(--secondaryColor);
+    font-size: 40px;
+    font-weight: bolder;
+    font-style: italic;
+    margin-left: 80px;
+}
+
+.successFrame {
+    margin: 30px 80px;
+    height: 70%;
+}
+
+.successBox {
+    border-radius: 50px;
+    background-color: var(--White);
+    width: 55%;
+    padding: 30px;
+    margin-top: 40px;
+    height: 300px;
+    border: var(--primaryColor) 2px solid;
+}
+
+.successBox a {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 15px;
+    color: var(--White);
+    font-weight: bold;
+    font-size: large;
+    border: var(--primaryColor) 3px solid;
+    width: fit-content;
+    margin: 20px 10px;
+    background: linear-gradient(to right, var(--darkBackground), var(--gradientBackground));
+}
+
+.registrationID {
+    color: var(--primaryColor);
+    font-weight: 600;
+    font-size: large;
+    margin-top: 20px;
+    line-height: 28px;
+
+}
+
+.registrationID strong span {
+    color: var(--secondaryColor);
+}
+
+.successBox aside {
+    display: block;
+    color: var(--primaryColor);
+    font-weight: 600;
+    font-size: medium;
+    width: fit-content;
+    margin: auto;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div>
+    <img draggable="true" src="./resorces/alpha_9941716.png" id="image1" class="image" />
+    <img draggable="true" src="./resorces/letter-c_6846642.png" id="image2" class="image" />
+    <img draggable="true" src="./resorces/letter-a_15178115.png" id="image3" class="image" />
+  </div>
+  <div style="display: inline-block; justify-items: center;">
+    <h1 style="display: block;">Letter A</h1>
+    <div id="dropBox">
+
+    </div>
+    <h1 id="score">Score: </h1>
+  </div>
+
+
+  <div>
+    -------------------------------------------------------------------------------------------------------------------
+  </div>
+  <div
+    style="height:400px; border: solid 3px black; width: 50%; justify-content: center; display: flex; padding: 40px;">
+    <h1 id="organ"></h1>
+    <svg width="500" height="500">
+      <ellipse cx="200" cy="180" rx="100" ry="120" fill="rgb(221, 184, 153)" class="face">
+      </ellipse>
+      <ellipse cx="170" cy="140" rx="13" ry="25" fill="rgb(255, 255, 255)" class="eye">
+      </ellipse>
+      <ellipse cx="230" cy="140" rx="13" ry="25" fill="rgb(255, 255, 255)" class="eye">
+      </ellipse>
+      <path d="M199.875,8.477C149.43-23.069,78.223,39.876,66.389,91.506c-11.864,51.66-37.332,140.844-22.076,197.605 
+      c15.256,56.763,84.624,75.68,84.624,75.68S107.626,218.7,103.166,196.081c7.368-16.803,106.7-107.739,119.299-131.893 
+      c-4.718,11.035,58.864,101.421,58.864,101.421l-38.371,208.116c0,0,77.793,3.678,89.365-83.562
+      C343.883,202.923,301.32-19.374,199.875,8.477z" fill="darkblue" class="hair" />
+      <ellipse cx="175" cy="145" rx="8" ry="12" fill="rgb(0, 0, 0)">
+      </ellipse>
+      <ellipse cx="235" cy="145" rx="8" ry="12" fill="rgb(0, 0, 0)">
+      </ellipse>
+      <line x1="200" y1="165" x2="185" y2="195" stroke="rgb(189, 154, 126)" stroke-width="4" class="noise">
+      </line>
+      <line x1="185" y1="195" x2="200" y2="195" stroke="rgb(189, 154, 126)" stroke-width="4" class="noise">
+      </line>
+
+      <g transform="translate(165 203) scale(1)">
+        <path fill="#E43535" d="M2,28.689839 
+           C24.825072,17.0806935 
+             31.4014384,23.937912 
+             32.0561798,24.7278688 
+           C32.7109212,23.937912 
+             39.2872876,17.0806935 
+             62.1123597,28.689839 
+           C62.1123597,28.689839 
+             50.9005812,48.3314902 
+             32.0981484,49.0237284 
+           C13.2117785,48.3314902 
+             2,28.689839 
+             2,28.689839 Z" class="mouth" />
+
+        <path fill="#FFF" d="M14,31 
+           C14,31 
+             25.9974744,31.9559435 
+             32,31.9559435 
+           C38.0025256,31.9559435 
+             50,31 
+             50,31 
+           C50,31 
+             41,38 
+             32,38 
+           C23,38 
+             14,31 
+             14,31 Z" class="mouth" />
+      </g>
+    </svg>
+  </div>
+
+
+  <div>
+    -------------------------------------------------------------------------------------------------------------------
+  </div>
+  <div
+    style="height:400px; border: solid 3px black; width: 100%; justify-content:space-around; display: flex; padding: 40px;">
+    <canvas id="faceCanvas" width="300" height="300"></canvas>
+    <canvas id="canvas" width="800" height="500"></canvas>
+  </div>
+
+  <div>
+    -------------------------------------------------------------------------------------------------------------------
+  </div>
+  <iframe id="win" src="" style="width: 600px; height: 450px; border: 0px; margin: 30px;" allowfullscreen=""
+    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+  <input type="button" value="Get My Location"
+    style="width: 400px; height: 50px; font-size: larger; font-weight: bold; color: aliceblue; background-color: black; border-radius: 20px; margin: 30px;"
+    id="locationBtn" />
+
+
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

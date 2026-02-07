@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    height: 70px;
+    background-color: rgb(77, 77, 77);
+    border-radius: 16px;
+
+}
+
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+}
+
+
+ul {
+    justify-content: space-between;
+    height: 70px;
+    margin: auto;
+    display: flex;
+}
+
+i {
+    color: #ffffff;
+}
+
+li:hover {
+    background-color: green;
+    border-radius: 16px;
+
+
+}
+
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("./Fonts/PlaywriteGBJGuides-Italic.ttf") format("truetype");
+}
+
+
+.task2 {
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: "MyCustomFont";
+    padding: 40px;
+}
+
+
+.profileImage {
+    width: 100px;
+    border-radius: 50%;
+}
+
+#card {
+    display: none;
+    background-color: rgb(190, 190, 190);
+    width: 400px;
+    border-radius: 50px;
+    align-items: center;
+}
+
+
+#card p {
+    font-size: 40px;
+    font-weight: 300;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+#closeCard {
+    font-size: 40px;
+    padding: 5px 10px;
+    margin-left: 30px;
+    color: red;
+    font-weight: 700;
+    cursor: default;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+}
+
+#image1 {
+    z-index: 2000000;
+    position: absolute;
+}
+
+.wrapper {
+    width: 1300px;
+    margin: 50px auto;
+    background: #e5e5e5;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.side {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+.left {
+    background: #4a8f1a;
+    color: #fff;
+}
+
+.right {
+    background: #777;
+    color: #fff;
+    display: grid;
+    gap: 20px;
+
+}
+
+.right span {
+    background: #6b6b6b;
+    padding: 15px;
+    border-radius: 8px;
+
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    column-count: 2;
+    column-gap: 30px;
+}
+
+.box {
+    /* break-inside: avoid; */
+    width: 400px;
+
+}
+
+.box img {
+    width: 170px;
+    float: left;
+    margin: 0 15px 10px 0;
+    border-radius: 6px;
+}
+
+.box h3 {
+    margin-top: 0;
+}
+
+.read {
+    color: black;
+    font-weight: bolder;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.showBar {
+    height: 400px;
+    width: 400px;
+    margin: 30px 10px;
+    border-radius: 40px;
+    transition: transform 0.4s
+}
+
+
+.showBar:hover {
+    transform: scale(1.04);
+}
+
+.continarShowBar {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: relative;
+    background: #fff;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    background: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.circle {
+    z-index: 2;
+}
+
+.ai {
+    background: conic-gradient(orange 75%, #ddd 0);
+}
+
+.ps {
+    background: conic-gradient(#00bcd4 60%, #ddd 0);
+}
+
+.au {
+    background: conic-gradient(#ff5252 50%, #ddd 0);
+}
+
+.css {
+    background: conic-gradient(#ffad4e 25%, #eee 0);
+}
+
+.circle {
+    color: #333;
+    font-size: 14px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}

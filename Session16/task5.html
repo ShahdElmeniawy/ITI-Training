@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Social Media Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary-color: #3b5998;
+            --secondary-color: #8b9dc3;
+            --accent-color: #4267B2;
+            --light-bg: #f7f9fa;
+            --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            --hover-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 8px 15px !important;
+            border-radius: 20px;
+            margin: 0 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .post-profile-img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .sidebar-card {
+            font-size: 14px;
+            border-radius: 10px;
+        }
+
+        .status-box {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .btn-secondary,
+        .btn-outline-secondary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover,
+        .btn-outline-secondary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-sm {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .btn-success,
+        .btn-danger {
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin: 3px;
+            font-weight: 500;
+        }
+
+        .post-image {
+            border-radius: 10px;
+            margin: 10px 0;
+            object-fit: cover;
+        }
+
+        .sticky-column {
+            position: sticky;
+            top: 90px;
+            z-index: 100;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-column {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .profile-img {
+                width: 60px;
+                height: 60px;
+            }
+
+            body {
+                padding-top: 60px;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        .post-header {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-chat-dots-fill me-2"></i>SocialHub
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="bi bi-house-door me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person me-1"></i>Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-chat-text me-1"></i>Messages
+                            <span class="badge bg-danger ms-1">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-bell me-1"></i>Notifications
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-12">
+                <div class="sticky-column">
+                    <div class="card sidebar-card mb-3">
+                        <div class="card-body text-center">
+                            <div class="position-relative mb-3">
+                                <img src="https://images.stockcake.com/public/b/e/6/be6b3fb5-17fb-4736-8a46-2bdc1bcff993_large/starlit-anime-gaze-stockcake.jpg"
+                                    class="rounded-circle profile-img">
+                                <span
+                                    class="position-absolute bottom-0 end-0 bg-success border border-2 border-white rounded-circle p-1"></span>
+                            </div>
+                            <h5 class="card-title mb-1">Alex Morgan</h5>
+                            <p class="text-muted mb-2">
+                                <i class="bi bi-briefcase me-1"></i>UX/UI Designer
+                            </p>
+                            <p class="text-muted mb-3">
+                                <i class="bi bi-geo-alt me-1"></i>London, UK
+                            </p>
+                            <div class="d-grid">
+                                <button class="btn btn-sm btn-secondary">
+                                    <i class="bi bi-pencil-square me-1"></i>Edit Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sidebar-card">
+                        <div class="card-body">
+                            <h6 class="card-title mb-3">
+                                <i class="bi bi-star-fill me-1 text-warning"></i>Interests
+                            </h6>
+                            <div class="interest-tags">
+                                <span class="badge bg-primary">News</span>
+                                <span class="badge bg-info">Games</span>
+                                <span class="badge bg-success">Friends</span>
+                                <span class="badge bg-warning text-dark">Design</span>
+                                <span class="badge bg-danger">Music</span>
+                                <span class="badge bg-secondary">Sports</span>
+                                <span class="badge bg-dark">Photography</span>
+                                <span class="badge bg-purple">Travel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-8">
+                <div class="card mb-4 status-box">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start mb-3">
+                            <img src="https://images.stockcake.com/public/b/e/6/be6b3fb5-17fb-4736-8a46-2bdc1bcff993_large/starlit-anime-gaze-stockcake.jpg"
+                                class="rounded-circle post-profile-img me-3">
+                            <input type="text" class="form-control" placeholder="What's on your mind, Alex?">
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <button class="btn btn-sm btn-outline-secondary me-2">
+                                    <i class="bi bi-image me-1"></i>Photo
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary me-2">
+                                    <i class="bi bi-camera-video me-1"></i>Video
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-calendar-event me-1"></i>Event
+                                </button>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">
+                                <i class="bi bi-send me-1"></i>Post
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center post-header mb-3">
+                            <img src="resources/profile.png" class="rounded-circle post-profile-img me-3">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">John Doe</h6>
+                                <small class="text-muted">
+                                    <i class="bi bi-globe me-1"></i>1 min ago • Public
+                                </small>
+                            </div>
+                            <button class="btn btn-link text-muted">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                        </div>
+
+                        <p class="card-text mb-3">
+                            Just finished an amazing design project! Can't wait to share the final results with
+                            everyone.
+                            The journey was challenging but rewarding.
+                        </p>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <img src="https://picsum.photos/400/250?1" class="img-fluid rounded post-image"
+                                    style="height: 200px;">
+                            </div>
+                            <div class="col-6">
+                                <img src="https://picsum.photos/400/250?2" class="img-fluid rounded post-image"
+                                    style="height: 200px;">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                            <div>
+                                <button class="btn btn-outline-secondary btn-sm me-2">
+                                    <i class="bi bi-hand-thumbs-up me-1"></i>Like
+                                    <span class="badge bg-secondary ms-1">24</span>
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    <i class="bi bi-chat-left-text me-1"></i>Comment
+                                    <span class="badge bg-secondary ms-1">8</span>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-share me-1"></i>Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center post-header mb-3">
+                            <img src="resources/profile.png" class="rounded-circle post-profile-img me-3">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">Angie Jane</h6>
+                                <small class="text-muted">
+                                    <i class="bi bi-globe me-1"></i>32 min ago • Friends
+                                </small>
+                            </div>
+                            <button class="btn btn-link text-muted">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                        </div>
+
+                        <img src="https://picsum.photos/700/350?3" class="img-fluid rounded post-image mb-3"
+                            style="height: 300px;">
+
+                        <p class="card-text mb-3">
+                            Beautiful sunset from my hike today! Nature always has the best color palette.
+                            Remember to take breaks and enjoy the little moments.
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                            <div>
+                                <button class="btn btn-outline-secondary btn-sm me-2">
+                                    <i class="bi bi-hand-thumbs-up me-1"></i>Like
+                                    <span class="badge bg-secondary ms-1">42</span>
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    <i class="bi bi-chat-left-text me-1"></i>Comment
+                                    <span class="badge bg-secondary ms-1">15</span>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-share me-1"></i>Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <div class="sticky-column">
+                    <div class="card sidebar-card mb-4">
+                        <div class="position-relative">
+                            <img src="https://picsum.photos/200/120?4" class="card-img-top">
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-danger">Upcoming</span>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="card-title">
+                                <i class="bi bi-calendar-check me-2"></i>Weekend Holiday
+                            </h6>
+                            <p class="text-muted mb-2">
+                                <i class="bi bi-clock me-1"></i>Friday 15:00
+                            </p>
+                            <p class="text-muted mb-3">
+                                <i class="bi bi-geo-alt me-1"></i>Central Park
+                            </p>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="bi bi-info-circle me-1"></i>More Info
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    <i class="bi bi-calendar-plus me-1"></i>Add to Calendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card sidebar-card mb-4">
+                        <div class="card-body text-center">
+                            <h6 class="card-title mb-3">
+                                <i class="bi bi-people me-2"></i>Friend Request
+                            </h6>
+                            <img src="https://img.freepik.com/premium-vector/young-girl-anime-style-character-vector-illustration-design-manga-anime-girl_147933-12543.jpg?semt=ais_hybrid&w=740&q=80"
+                                class="rounded-circle mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+                            <h6 class="mb-1">Sakura Tanaka</h6>
+                            <p class="text-muted small mb-3">10 mutual friends</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <button class="btn btn-success btn-sm">
+                                    <i class="bi bi-check-lg"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            </div>
+                            <a href="#" class="small text-decoration-none">
+                                <i class="bi bi-eye me-1"></i>View Profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card sidebar-card">
+                        <div class="card-body">
+                            <h6 class="card-title mb-3">
+                                <i class="bi bi-circle-fill text-success me-2"></i>Online Now (6)
+                            </h6>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80"
+                                    class="rounded-circle me-2" style="width: 35px; height: 35px;">
+                                <span class="small">Mike Wilson</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80"
+                                    class="rounded-circle me-2" style="width: 35px; height: 35px;">
+                                <span class="small">Sarah Miller</span>
+                            </div>
+                            <a href="#" class="small text-decoration-none d-block text-center mt-2">
+                                See All Friends
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <h5 class="mb-3">SocialHub</h5>
+            <p class="mb-4">Connect with friends and the world around you</p>
+            <div class="d-flex justify-content-center gap-4 mb-3">
+                <a href="#" class="text-white text-decoration-none">
+                    <i class="bi bi-facebook me-1"></i>Facebook
+                </a>
+                <a href="#" class="text-white text-decoration-none">
+                    <i class="bi bi-twitter me-1"></i>Twitter
+                </a>
+                <a href="#" class="text-white text-decoration-none">
+                    <i class="bi bi-instagram me-1"></i>Instagram
+                </a>
+                <a href="#" class="text-white text-decoration-none">
+                    <i class="bi bi-linkedin me-1"></i>LinkedIn
+                </a>
+            </div>
+            <p class="small mb-0">
+                <i class="bi bi-c-circle"></i> 2023 SocialHub. All rights reserved.
+                <br>
+                <span class="text-light">Powered by Bootstrap 5.3.2</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.querySelectorAll('.btn-outline-secondary').forEach(button => {
+            button.addEventListener('click', function () {
+                if (this.innerHTML.includes('Like')) {
+                    const badge = this.querySelector('.badge');
+                    let count = parseInt(badge.textContent);
+                    badge.textContent = count + 1;
+                    this.classList.toggle('btn-secondary');
+                    this.classList.toggle('btn-outline-secondary');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

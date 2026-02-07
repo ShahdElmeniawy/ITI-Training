@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Cookies</title>
+</head>
+
+<body>
+    <div class="login-form">
+        <h2>Login with Cookies</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="cookie-info">
+            <h3>About Cookies:</h3>
+            <p><strong>Differences from Local Storage:</strong></p>
+            <ul>
+                <li>Cookies are sent to server with every request</li>
+                <li>Cookies have expiration dates</li>
+                <li>Cookies have size limits (~4KB vs 5-10MB)</li>
+                <li>Cookies can be set to be HTTP-only (secure)</li>
+                <li>Cookies work with server-side code</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 5px;">
+            <h3>Current Cookies:</h3>
+            <pre id="cookieDisplay"></pre>
+            <button onclick="clearAllCookies()" style="width: auto; background: #f44336;">Clear All Cookies</button>
+        </div>
+    </div>
+
+    <script src="login-cookies.js"></script>
+</body>
+
+</html>

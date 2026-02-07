@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX User Data</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>User Data from API</h1>
+
+        <div class="input-section">
+            <h2>Search User by ID</h2>
+            <input type="number" id="userIdInput" placeholder="Enter User ID (1-12)" min="1" max="12" value="1">
+            <button onclick="getUserById()">Display User</button>
+            <div id="singleUserResult"></div>
+        </div>
+
+        <div class="dropdown-section">
+            <h2>Select User from List</h2>
+            <select id="usersDropdown" onchange="displaySelectedUser()">
+                <option value="">Loading users...</option>
+            </select>
+            <div id="selectedUserResult"></div>
+        </div>
+
+        <div class="result-section">
+            <div id="allUsersList"></div>
+        </div>
+    </div>
+
+    <script src="ajax-users.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Full Drag & Drop Events</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .items {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            width: 80px;
+            height: 50px;
+            background: #92E3A9;
+            text-align: center;
+            line-height: 50px;
+            cursor: grab;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+
+        .item.dragging {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+
+        .drop-zone {
+            width: 220px;
+            min-height: 120px;
+            border: 2px dashed #333;
+            margin-bottom: 15px;
+            padding: 10px;
+            transition: background 0.2s;
+        }
+
+        .drop-zone.highlight {
+            background: #eafff4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Draggable Items</h3>
+    <div class="items">
+        <div class="item" draggable="true" id="item1">Item 1</div>
+        <div class="item" draggable="true" id="item2">Item 2</div>
+        <div class="item" draggable="true" id="item3">Item 3</div>
+    </div>
+
+    <h3>Drop Zones</h3>
+    <div class="drop-zone" id="zone1">Drop Zone 1</div>
+    <div class="drop-zone" id="zone2">Drop Zone 2</div>
+
+    <script>
+        const items = document.querySelectorAll(".item");
+        const dropZones = document.querySelectorAll(".drop-zone");
+
+        // ==============================
+        // Drag Events on Items
+        // ==============================
+        items.forEach(item => {
+            item.addEventListener("dragstart", (e) => {
+                e.dataTransfer.setData("text", e.target.id);
+                item.classList.add("dragging");
+                console.log(e.target.id + " dragstart");
+            });
+
+            item.addEventListener("dragend", (e) => {
+                item.classList.remove("dragging");
+                console.log(e.target.id + " dragend");
+            });
+        });
+
+        // ==============================
+        // Drop Zone Events
+        // ==============================
+        dropZones.forEach(zone => {
+
+            zone.addEventListener("dragenter", (e) => {
+                e.preventDefault();
+                zone.classList.add("highlight");
+                console.log(zone.id + " dragenter");
+            });
+
+            zone.addEventListener("dragover", (e) => {
+                e.preventDefault(); // مهم جدًا
+                console.log(zone.id + " dragover");
+            });
+
+            zone.addEventListener("dragleave", (e) => {
+                zone.classList.remove("highlight");
+                console.log(zone.id + " dragleave");
+            });
+
+            zone.addEventListener("drop", (e) => {
+                e.preventDefault();
+                const id = e.dataTransfer.getData("text");
+                const draggedItem = document.getElementById(id);
+
+                zone.appendChild(draggedItem);
+                zone.classList.remove("highlight");
+
+                console.log(draggedItem.id + " dropped in " + zone.id);
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

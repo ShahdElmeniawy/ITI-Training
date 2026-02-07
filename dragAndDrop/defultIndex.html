@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag and Drop</title>
+
+  <style>
+    .items {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .item {
+      width: 80px;
+      height: 50px;
+      background: #92E3A9;
+      text-align: center;
+      line-height: 50px;
+      cursor: grab;
+      border-radius: 6px;
+    }
+
+    .drop-zone {
+      width: 220px;
+      min-height: 120px;
+      border: 2px dashed #333;
+      margin-bottom: 15px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Draggable Items</h3>
+  <div class="items">
+    <div class="dragElement" draggable="true">Item 1</div>
+    <div class="item" draggable="true" id="item2">Item 2</div>
+    <div class="item" draggable="true" id="item3">Item 3</div>
+  </div>
+
+  <h3>Drop Zones</h3>
+  <div class="drop-zone">Drop Zone 1</div>
+  <div class="drop-zone">Drop Zone 2</div>
+
+  <script>
+    const items = document.querySelectorAll(".item");
+    const dropZones = document.querySelectorAll(".drop-zone");
+
+    // drag start
+    items.forEach(item => {
+      item.addEventListener("dragstart", function (e) {
+        e.dataTransfer.setData("text", this.id);
+      });
+    });
+
+    // drag over + drop
+    dropZones.forEach(zone => {
+
+      zone.addEventListener("dragover", function (e) {
+        e.preventDefault(); // لازم
+      });
+
+      zone.addEventListener("drop", function (e) {
+        e.preventDefault();
+
+        const id = e.dataTransfer.getData("text");
+        const draggedItem = document.getElementById(id);
+
+        // نقل العنصر (مش نسخه)
+        zone.appendChild(draggedItem);
+      });
+
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-white text-center p-4">
+        <h1>task1 & 2</h1>
+    </div>
+
+    <div class="container mt-4">
+
+        <h3 class="mb-3">Responsive Rounded Image</h3>
+        <img src="resources/images (1).jpg" class="img-fluid rounded mb-4" alt="Responsive Image">
+
+        <button class="btn btn-primary mb-3" onclick="toggleContent()">
+            Show / Hide Content
+        </button>
+
+        <div id="toggleBox" class="alert alert-info">
+            This content can be shown or hidden using JavaScript!
+        </div>
+
+        <h3 class="mt-4 mb-3">Image Thumbnails</h3>
+        <div class="row g-3">
+
+            <div class="col-md-4 col-sm-6">
+                <img src="resources/images (1).jpg" class="img-thumbnail" alt="img1">
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <img src="resources/images.jpg" class="img-thumbnail" alt="img2">
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <img src="resources/v1-0052-20250224-cl-adobe-chukhlomin-chineese-food-cooking-4-engelsa-crossmedia00000000-0hz0gcodgu_thumbnail-180_03.jpg" class="img-thumbnail" alt="img3">
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <img src="resources/v1-0052-20250224-cl-adobe-chukhlomin-chineese-food-cooking-4-engelsa-crossmedia00000000-0hz0gcodgu_thumbnail-180_03.jpg" class="img-thumbnail" alt="img4">
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <img src="resources/images (1).jpg" class="img-thumbnail" alt="img5">
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <img src="resources/images.jpg" class="img-thumbnail" alt="img6">
+            </div>
+
+        </div>
+
+        <div class="card mt-5">
+            <div class="card-body">
+                <h5 class="card-title">Bootstrap Card</h5>
+                <p class="card-text">
+                    This is an example of a Bootstrap component.
+                </p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleContent() {
+            document.getElementById("toggleBox").classList.toggle("d-none");
+        }
+    </script>
+
+</body>
+
+</html>

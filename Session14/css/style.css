@@ -1,0 +1,30 @@
+.image {
+    height: 100px;
+    width: 100px;
+    border-radius: 30px;
+    margin: 15px;
+}
+
+#dropBox {
+    width: 300px;
+    height: 300px;
+    border: black solid 3px;
+    background-color: rgb(202, 202, 202);
+    border-radius: 30px;
+    justify-content: center;
+    display: flex;
+}
+#faceCanvas{
+    cursor: default;
+}
+
+
+canvas {
+    border: 2px solid #333;
+    background: white;
+    cursor: crosshair;
+}
+
+#locationBtn:hover{
+    -webkit-text-stroke-width: 1px;
+}

@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form with Storage</title>
+</head>
+
+<body>
+    <div class="login-form">
+        <h2>Login Form</h2>
+        <form id="loginForm">
+            <div class="storage-type">
+                <label>
+                    <input type="radio" name="storageType" value="local" checked>
+                    Local Storage
+                </label>
+                <label>
+                    <input type="radio" name="storageType" value="session">
+                    Session Storage
+                </label>
+            </div>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

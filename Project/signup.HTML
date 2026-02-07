@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" type="image/x-icon" href="./resources/logo.png">
+</head>
+
+<body>
+    <div class="continer">
+        <img src="./resources/wickedbackground (2).png" class="signWave">
+        <img src="./resources/Mobile login-pana.png" class="signImg">
+        <form action="./login.HTML" id="signUp" class="logForm">
+            <label for="userName"> Name </label>
+            <input type="text" id="userName" required>
+            <div id="usernameInvalidText">Username is invalid</div>
+            <label for="mail"> Email </label>
+            <input type="text" id="mail" required>
+            <div id="emailInvalidText">Email is invalid</div>
+            <label for="age"> Birthday </label>
+            <input type="date" id="age" required>
+            <label for="password"> Password </label>
+            <input type="password" id="password" required>
+            <div id="passwordInvalidText">Password is invalid</div>
+            <label for="confirmPassword"> Confirm Password </label>
+            <input type="password" id="confirmPassword" required>
+            <div id="confirmPasswordInvalidText">Password is not match</div>
+            <input type="submit" value="Submit" id="submitbut">
+            <a href="./login.HTML">Go to login Page</a>
+        </form>
+    </div>
+
+    <script src="./js/signup.js"></script>
+</body>
+
+</html>

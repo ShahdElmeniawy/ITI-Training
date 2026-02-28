@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pricing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        h1 {
+            font-weight: 700;
+        }
+
+        /* Toggle */
+        .toggle-wrapper {
+            background: #eef2ff;
+            border-radius: 999px;
+            padding: 6px;
+            display: inline-flex;
+            gap: 4px;
+        }
+
+        .toggle-btn {
+            border: none;
+            background: transparent;
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-weight: 600;
+            color: #4f46e5;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .toggle-btn.active {
+            background: #4f46e5;
+            color: #fff;
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            border-radius: 18px;
+            border: 1px solid #e5e7eb;
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .pricing-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .pricing-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .pricing-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .popular {
+            border: 2px solid #4f46e5;
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #facc15;
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 999px;
+        }
+
+        .price {
+            font-size: 42px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .price span {
+            font-size: 16px;
+            font-weight: 500;
+            color: #6b7280;
+        }
+
+        .amount {
+            display: inline-block;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: #4f46e5;
+            border: none;
+        }
+
+        .btn-outline-primary {
+            border-color: #4f46e5;
+            color: #4f46e5;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #4f46e5;
+            color: #fff;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container py-5">
+
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h1>Simple, Transparent Pricing</h1>
+            <p class="text-muted">Choose the plan that works best for your team</p>
+
+            <!-- Toggle -->
+            <div class="d-flex justify-content-center mt-4">
+                <div class="toggle-wrapper">
+                    <button id="monthlyBtn" class="toggle-btn active">Monthly</button>
+                    <button id="yearlyBtn" class="toggle-btn">
+                        Annually <span class="badge bg-success ms-1">Save 20%</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Starter -->
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card h-100 p-4">
+                    <h5 class="fw-bold">Starter</h5>
+                    <div class="price" data-monthly="9" data-yearly="7">
+                        $<span class="amount">9</span><span>/mo</span>
+                    </div>
+                    <p class="text-muted">Perfect for small teams</p>
+
+                    <ul class="list-unstyled mt-4 mb-4">
+                        <li> Up to 10 users</li>
+                        <li> 5 GB storage</li>
+                        <li> Basic integrations</li>
+                        <li> Email support</li>
+                    </ul>
+
+                    <button class="btn btn-outline-primary w-100">Get Started</button>
+                </div>
+            </div>
+
+            <!-- Professional -->
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card popular h-100 p-4">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h5 class="fw-bold">Professional</h5>
+                    <div class="price" data-monthly="29" data-yearly="23">
+                        $<span class="amount">29</span><span>/mo</span>
+                    </div>
+                    <p class="text-muted">For growing businesses</p>
+
+                    <ul class="list-unstyled mt-4 mb-4">
+                        <li> Up to 50 users</li>
+                        <li> 50 GB storage</li>
+                        <li> All integrations</li>
+                        <li> Priority support</li>
+                        <li> Advanced analytics</li>
+                    </ul>
+
+                    <button class="btn btn-primary w-100">Get Started</button>
+                </div>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card h-100 p-4">
+                    <h5 class="fw-bold">Enterprise</h5>
+                    <div class="price">Custom</div>
+                    <p class="text-muted">For large organizations</p>
+
+                    <ul class="list-unstyled mt-4 mb-4">
+                        <li> Unlimited users</li>
+                        <li> Unlimited storage</li>
+                        <li> Custom integrations</li>
+                        <li> 24/7 phone support</li>
+                        <li> Dedicated manager</li>
+                    </ul>
+
+                    <button class="btn btn-outline-primary w-100">Contact Sales</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const monthlyBtn = document.getElementById('monthlyBtn');
+        const yearlyBtn = document.getElementById('yearlyBtn');
+        const prices = document.querySelectorAll('.price[data-monthly]');
+
+        function setPricing(type) {
+            prices.forEach(price => {
+                const amount = price.querySelector('.amount');
+                amount.style.opacity = 0;
+                setTimeout(() => {
+                    amount.textContent = price.dataset[type];
+                    amount.style.opacity = 1;
+                }, 200);
+            });
+        }
+
+        monthlyBtn.onclick = () => {
+            monthlyBtn.classList.add('active');
+            yearlyBtn.classList.remove('active');
+            setPricing('monthly');
+        };
+
+        yearlyBtn.onclick = () => {
+            yearlyBtn.classList.add('active');
+            monthlyBtn.classList.remove('active');
+            setPricing('yearly');
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuickSort App</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>QuickSort Visualizer</h1>
+
+    <input id="arrayInput" placeholder="Enter numbers (e.g. 5,3,8,1)" />
+    <br>
+    <button onclick="sortArray()">Sort</button>
+
+    <div id="result"></div>
+
+    <script>
+        function quickSort(arr) {
+            if (arr.length <= 1) return arr;
+
+            let pivot = arr[arr.length - 1];
+            let left = [];
+            let right = [];
+
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] < pivot) left.push(arr[i]);
+                else right.push(arr[i]);
+            }
+
+            return [...quickSort(left), pivot, ...quickSort(right)];
+        }
+
+        function sortArray() {
+            let input = document.getElementById("arrayInput").value;
+
+            try {
+                let arr = input.split(",").map(x => {
+                    let num = Number(x.trim());
+                    if (isNaN(num)) throw "Invalid number!";
+                    return num;
+                });
+
+                let sorted = quickSort(arr);
+
+                document.getElementById("result").innerText =
+                    "Sorted: " + sorted.join(", ");
+            } catch (e) {
+                document.getElementById("result").innerText = "Error: " + e;
+            }
+        }
+    </script>
+
+</body>
+</html>

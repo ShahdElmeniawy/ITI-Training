@@ -1,0 +1,100 @@
+<!-- ── Store Header (Task 2b) ── -->
+<header class="store-header">
+  <div class="store-brand">
+    <div class="store-info">
+      <!-- Task 2b-1: heading for store name -->
+      <h1 class="store-name">{{ store.name }}</h1>
+
+      <!-- Task 2b-3: display StoreOwner -->
+      <p class="store-owner">Owner: <span>{{ storeOwner }}</span></p>
+    </div>
+  </div>
+
+  <div class="store-branches">
+    <span *ngFor="let branch of store.branches" class="branch-tag">
+       {{ branch }}
+    </span>
+  </div>
+</header>
+
+<!-- ── Controls Bar ── -->
+<div class="controls-bar">
+
+  <!-- Task 6: Search by name – two-way binding -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Search products..."
+      class="search-input"
+    />
+  </div>
+
+  <!-- Bonus: Category dropdown – two-way binding -->
+  <div class="filter-wrap">
+    <select [(ngModel)]="selectedCategoryID" class="category-select">
+      <option [value]="0">All Categories</option>
+      <option *ngFor="let cat of categories" [value]="cat.ID">
+        {{ cat.Name }}
+      </option>
+    </select>
+  </div>
+
+</div>
+
+<!-- ── Result count ── -->
+<div class="result-info">
+  Showing <strong>{{ filteredProducts.length }}</strong> product(s)
+</div>
+
+<!-- ── Product Grid (Task 4b) ── -->
+<div class="products-grid">
+  <div
+    class="product-card"
+    *ngFor="let product of filteredProducts"
+    [class.card-out]="product.Quantity === 0"
+  >
+    <!-- Task 4b-1: img with property binding -->
+    <div class="card-img-wrap">
+      <img [src]="product.Img" [alt]="product.Name" class="product-img" />
+      <span class="cat-badge">
+        {{ categories | categoryName: product.CategoryID }}
+      </span>
+    </div>
+
+    <div class="card-body">
+      <h3 class="product-name">{{ product.Name }}</h3>
+      <p class="product-price">{{ product.Price | currency:'EGP ':'symbol':'1.0-0' }}</p>
+
+      <!-- Task 5b: quantity status via switch -->
+      <span class="status-badge" [ngClass]="getStatusClass(product.Quantity)">
+        {{ getQuantityStatus(product.Quantity) }}
+      </span>
+
+      <p class="qty-text">Qty: {{ product.Quantity }}</p>
+    </div>
+
+    <div class="card-actions">
+      <!-- Task 5d: Details button -->
+      <button class="btn btn-details" (click)="showDetails(product)">
+        Details
+      </button>
+
+      <!-- Task 5a/5c: Buy button – disabled when Quantity=0, decreases qty on click -->
+      <button
+        class="btn btn-buy"
+        (click)="buy(product)"
+        [disabled]="product.Quantity === 0"
+      >
+        Buy
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Empty state -->
+<div class="empty-state" *ngIf="filteredProducts.length === 0">
+  <p>No products found.</p>
+</div>

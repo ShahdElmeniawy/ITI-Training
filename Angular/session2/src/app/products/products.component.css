@@ -1,0 +1,349 @@
+/* ── Fonts & Root ── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+:host {
+  display: block;
+  /* min-height: 100vh; */
+  background: white;
+  font-family: 'DM Sans', sans-serif;
+  color: #e8e8f0;
+  padding: 0 0 60px;
+}
+
+
+/* ── Store Header ── */
+.store-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  padding: 10px 48px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 2px solid #e94560;
+  box-shadow: 0 4px 30px rgba(233, 69, 96, 0.2);
+}
+
+.store-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.store-logo {
+  height: 60px;
+  border-radius: 10px;
+  border: 2px solid rgba(233, 69, 96, 0.5);
+  object-fit: contain;
+  background: #fff;
+  padding: 4px 10px;
+}
+
+.store-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0;
+  background: linear-gradient(90deg, #fff 40%, #e94560);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.store-owner {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #a0a0c0;
+}
+
+.store-owner span {
+  color: #e94560;
+  font-weight: 600;
+}
+
+.store-branches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.branch-tag {
+  background: rgba(233, 69, 96, 0.12);
+  border: 1px solid rgba(233, 69, 96, 0.35);
+  color: #e8c0c8;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+}
+
+/* ── Controls Bar ── */
+.controls-bar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 24px 48px 0;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  background: #1a1a2e;
+  border: 1.5px solid #2a2a4a;
+  border-radius: 10px;
+  color: #e8e8f0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #e94560;
+}
+
+.search-input::placeholder {
+  color: #555580;
+}
+
+.filter-wrap {}
+
+.category-select {
+  padding: 12px 16px;
+  background: #1a1a2e;
+  border: 1.5px solid #2a2a4a;
+  border-radius: 10px;
+  color: #e8e8f0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  min-width: 180px;
+}
+
+.category-select:focus {
+  border-color: #e94560;
+}
+
+.result-info {
+  padding: 12px 48px 0;
+  font-size: 0.85rem;
+  color: #555580;
+}
+
+.result-info strong {
+  color: #e94560;
+}
+
+/* ── Product Grid ── */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 24px;
+  padding: 24px 48px 0;
+}
+
+.product-card {
+  background: #14142a;
+  border: 1px solid #2a2a4a;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(233, 69, 96, 0.18);
+  border-color: rgba(233, 69, 96, 0.4);
+}
+
+.product-card.card-out {
+  opacity: 0.55;
+  filter: grayscale(40%);
+}
+
+/* Card image */
+.card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.cat-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(15, 52, 96, 0.85);
+  border: 1px solid #0f3460;
+  color: #a0c4ff;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Card body */
+.card-body {
+  padding: 16px 18px 8px;
+  flex: 1;
+}
+
+.product-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #e8e8f0;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e94560;
+  margin: 0 0 10px;
+}
+
+.qty-text {
+  font-size: 0.82rem;
+  color: #555580;
+  margin: 6px 0 0;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.status-in {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-low {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.status-out {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Card actions */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  padding: 12px 18px 18px;
+}
+
+.btn {
+  flex: 1;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-details {
+  background: #1e1e3a;
+  color: #a0a0d0;
+  border: 1px solid #2a2a4a;
+}
+
+.btn-details:hover {
+  background: #28285a;
+  color: #e8e8f0;
+}
+
+.btn-buy {
+  background: #e94560;
+  color: #fff;
+}
+
+.btn-buy:hover {
+  opacity: 0.88;
+}
+
+.btn-buy:disabled {
+  background: #3a2a2e;
+  color: #664450;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* ── Empty state ── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #555580;
+  font-size: 1.1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .store-header {
+    padding: 20px 20px;
+  }
+
+  .controls-bar,
+  .products-grid,
+  .result-info {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,117 @@
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  min-height: 90vh;
+  transition: background-color 0.3s, color 0.3s;
+
+  &.light {
+    background: color.adjust($primary-light, $lightness: 40%);
+    color: black;
+
+    @if $theme-mode =='custom' {
+      h1 {
+        color: color.adjust($secondary-color, $lightness: 20%);
+      }
+    }
+    @else {
+      h1 {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &.dark {
+    background: $primary-dark;
+    color: white;
+
+    h1 {
+      color: color.adjust($primary-light, $lightness: 20%);
+    }
+
+}
+}
+
+.container {
+  @include flex-center;
+  gap: 15px;
+  margin-top: 40px;
+
+  h1 {
+    color: $secondary-color;
+  }
+}
+
+
+.btn-dark {
+  @include button-style($button-color);
+}
+
+.btn-light {
+  @include button-style($button-color);
+}
+
+
+.box {
+  width: 60%;
+  margin: auto;
+  padding: $padding;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+$colors: "red", "green", "blue";
+
+@each $color in $colors {
+  .text-#{$color} {
+    color: #{$color};
+  }
+}
+
+@for $i from 1 through 3 {
+  .m-#{$i} {
+    margin: #{$i * 10}px auto;
+  }
+}
+
+.conditional-box {
+  @if $theme-mode =='dark' {
+    background: black;
+    color: white;
+  }
+
+  @else if $theme-mode =='light' {
+    background: white;
+    color: black;
+  }
+
+  @else {
+    background: gray;
+    color: white;
+  }
+}
+.color-demo {
+  $base-color: #3498db;
+  .scaled {
+    background: color.scale($base-color, $lightness: 20%);
+  }
+  .adjusted {
+    background: color.adjust($base-color, $lightness: 20%);
+  }
+  .mixed {
+    background: color.mix($base-color, yellow, 70%);
+  }
+  .complement {
+    background: color.complement($base-color);
+  }
+}

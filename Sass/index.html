@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sass Demo</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body> 
+
+    <div class="container">
+        <h1>Sass Page</h1>
+        <br>
+        <button class="btn-light">Light</button>
+        <button class="btn-dark">Dark</button>
+    </div>
+
+    <div class="box m-2 text-red">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, fuga tempora. Enim molestiae dolores voluptatum
+        nemo nulla, commodi deserunt. Deserunt beatae et tempore explicabo ullam nam veritatis deleniti non
+        perspiciatis!
+    </div>
+
+    <div class="box m-2 text-green">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, fuga tempora. Enim molestiae dolores voluptatum
+        nemo nulla, commodi deserunt. Deserunt beatae et tempore explicabo ullam nam veritatis deleniti non
+        perspiciatis!
+    </div>
+
+    <div class="box m-2 text-blue">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, fuga tempora. Enim molestiae dolores voluptatum
+        nemo nulla, commodi deserunt. Deserunt beatae et tempore explicabo ullam nam veritatis deleniti non
+        perspiciatis!
+    </div>
+
+    <script>
+        const lightBtn = document.querySelector(".btn-light");
+        const darkBtn = document.querySelector(".btn-dark");
+        const body = document.body;
+
+        function setTheme(theme) {
+            body.classList.remove("light", "dark");
+            body.classList.add(theme);
+            localStorage.setItem("theme", theme);
+        }
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+            setTheme(savedTheme);
+        } else {
+            setTheme('light');
+        }
+
+        lightBtn.addEventListener("click", () => setTheme("light"));
+        darkBtn.addEventListener("click", () => setTheme("dark"));
+    </script>
+
+</body>
+
+</html>
